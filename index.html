@@ -9,9 +9,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 
     <style>
-        *{
+        * {
             scroll-behavior: smooth;
         }
+
         /* Navbar */
         .custom-navbar {
             background-color: #0E2954;
@@ -45,29 +46,135 @@
             background-color: #FFFFFF;
         }
 
-        /* Main */
-        #main {
-            padding: 10% 0%;
+        .wrap-ac {
             display: flex;
+            justify-content: center;
+            height: 100%;
+        }
+
+        .cont-ac {
+            width: 800px;
+            height: 400px;
+            border-radius: 3%;
+            background-color: whitesmoke;
+            border: 8px solid black;
+            display: flex;
+            padding: 0% 2%;
             justify-content: space-between;
             align-items: center;
         }
 
-        .tittle-main {
+        .fan {
             display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .part {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 25px solid black;
+            border-radius: 50%;
+            width: 250px;
+            height: 250px;
+        }
+
+        .box {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            text-align: center;
+            position: relative;
+            margin: auto;
+        }
+
+        @keyframes rotateon {
+            100% {
+                transform: rotateZ(360deg);
+            }
+        }
+
+        @keyframes rotateoff {
+            100% {
+                transform: rotateZ(360deg);
+            }
+        }
+
+        .box1 {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background-color: black;
+            top: 50%;
+            border-radius: 50%;
+            box-shadow: 0px 0px 5px 5px gold;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .box1 p {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 16px;
+            color: gold;
+        }
+
+        .tombol {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .on,
+        .off {
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            display: block;
+            cursor: pointer;
+        }
+
+        .off {
+            display: none;
+        }
+
+        .text-ac{
+            font-style: italic;
+        }
+
+        .landing-page{
+            padding: 4% 0%;
+        }
+
+        .tittle-main {
+            justify-content: center;
+            align-items: center;
+            display: flex;
+
         }
 
         .tittle-main h1 {
+            margin-bottom: 0%;
             font-size: 60px;
-            color: #ffbf00;
-        }
-
-        .tittle-main span {
             color: #0E2954;
         }
 
+        .sub-main {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-style: italic;
+            margin-bottom: 0%;
+        }
+
         .subtittle-main {
-            display: inline-flex;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .subtittle-main .diam {
@@ -121,12 +228,23 @@
             }
         }
 
-
-        .right-section {
+        #promo{
+            padding: 1% 0%;
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
+            align-items: center;
         }
 
+        .tittle-promo {padding: 1% 0%;
+           color: #0E2954;
+        }
+        .tittle-promo h1{
+           text-align: center;
+        }
+        .tittle-promo p{
+            text-align: center;
+            font-weight: bold;
+        }
         .wrap-card {
             display: flex;
             flex-direction: row;
@@ -157,12 +275,12 @@
 
         .tittle-card {
             text-align: center;
-            background-color: gold;
-            color: #0E2954;
+            color: gold;
             border-radius: 4%;
         }
 
         .subtittle-card {
+            
             margin-bottom: 0%;
         }
 
@@ -171,7 +289,8 @@
             font-weight: bold;
             margin-bottom: 8px;
         }
-        .confirm{
+
+        .confirm {
             background-color: #38E54D
         }
 
@@ -311,7 +430,30 @@
                     font-size: 34px;
                 }
             }
+
+            @media only screen and (max-width: 767px) and (min-width: 320px) {
+                .cont-ac {
+                    width: 300px;
+                    height: 350px;
+                    justify-content: center;
+                }
+
+                .text-ac {
+                    display: none;
+                }
+
+                .sub-main {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-style: italic;
+                    margin-bottom: 0%;
+                }
+            }
         }
+
+
+
     </style>
     <title>AC Service</title>
 </head>
@@ -320,7 +462,7 @@
     <nav class="navbar navbar-expand-lg navbar-light custom-navbar sticky-top">
         <div class="container">
             <!-- Logo -->
-            <a class="navbar-brand" href="#">KMT</a>
+            <a class="navbar-brand" href="#">SWISC</a>
 
             <!-- Toggler Button -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
@@ -333,6 +475,9 @@
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
                         <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#promo">Promo</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#layanan">Layanan</a>
@@ -349,30 +494,54 @@
     </nav>
 
     <div class="container">
-        <!-- Tempatkan banner Anda di sini -->
-        <!-- Main page -->
-        <div id="main">
-            <div class="left-section">
-                <!-- Div untuk teks di sebelah kiri -->
+        <div class="landing-page">
+            <div class="judul-inti">
                 <div class="tittle-main">
-                    <h1>K<span>arya</span></h1>
-                    <h1>M<span>andiri</span></h1>
-                    <h1>T<span>eknik</span></h1>
-                </div>
-                <div class="subtittle-main">
-                    <p class="diam">Kami melayani</p>
-                    <ul class="jalan">
-                        <li><span>Pengecekan AC</span></li>
-                        <li><span>Bongkar & Pasang AC</span></li>
-                        <li><span>Pengadaan AC</span></li>
-                        <li><span>Pengisian Refrigerant</span></li>
-                        <li><span>Pembersihan Berkala</span></li>
-                        <li><span>Kemitraan</span></li>
-                    </ul>
+                    <h1>SWISC</h1>
                 </div>
             </div>
-            <div class="right-section">
-                <!-- Div untuk card di sebelah kanan -->
+            <p class="sub-main">- Sapra WIjaya Specialist Cooler -</p>
+            <div class="subtittle-main">
+                <p class="diam">Kami melayani</p>
+                <ul class="jalan">
+                    <li><span>Pengecekan AC</span></li>
+                    <li><span>Bongkar & Pasang AC</span></li>
+                    <li><span>Pengadaan AC</span></li>
+                    <li><span>Pengisian Refrigerant</span></li>
+                    <li><span>Pembersihan Berkala</span></li>
+                    <li><span>Kemitraan</span></li>
+                </ul>
+            </div>
+            <!-- Tempatkan banner Anda di sini -->
+            <div class="wrap-ac">
+                <div class="cont-ac">
+                    <div class="fan">
+                        <div class="part">
+                            <div class="box">
+                                <img src="https://cdn-icons-png.flaticon.com/512/95/95252.png" width="100%" height="100%">
+                                <div class="box1">
+                                    <p>SWISC</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tombol">
+                            <div class="on"><img src="asset/power.png" width="100%"></div>
+                            <div class="off"><img src="asset/power-button.png" width="100%"></div>
+                        </div>
+                    </div>
+                    <div class="text-ac">
+                        <h1>SWISC</h1>
+                        <p>Specialist Air Conditioner</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <!-- Main page -->
+        <div id="promo">
+            <div class="tittle-promo">
+                <h1>Promo</h1>
+                <p>- Dapatkan Harga Murah Dengan Membeli Membership! - </p>
                 <div class="wrap-card">
                     <div class="card">
                         <div class="rec">
@@ -586,65 +755,97 @@
     </div>
 
     <!-- Javascript -->
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-<script>
-    // Script untuk mengatur galeri slick-carousel
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script>
+        // Script untuk mengatur galeri slick-carousel
 
-    $(document).ready(function () {
-        $('.gallery').slick({
-            dots: false,
-            infinite: false,
-            speed: 300,
-            slidesToShow: 3,
-            slidesToScroll: 1,
-            swipe: true, // Mengaktifkan swipe
-            responsive: [
-                {
-                    breakpoint: 1024,
-                    settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 1,
-                        swipe: true
+        $(document).ready(function () {
+            $('.gallery').slick({
+                dots: false,
+                infinite: false,
+                speed: 300,
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                swipe: true, // Mengaktifkan swipe
+                responsive: [
+                    {
+                        breakpoint: 1024,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 1,
+                            swipe: true
+                        }
+                    },
+                    {
+                        breakpoint: 600,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1,
+                            swipe: true
+                        }
                     }
-                },
-                {
-                    breakpoint: 600,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1,
-                        swipe: true
-                    }
-                }
-            ],
-            prevArrow: false, // Menghilangkan tombol prev
-            nextArrow: false // Menghilangkan tombol next
-        });
-    });
-
-    // Script untuk menutup navbar hamburger
-
-    $(document).ready(function () {
-        // Dapatkan semua elemen dengan class "nav-link"
-        var navLinks = document.querySelectorAll('.nav-link');
-
-        // Dapatkan tombol hamburger
-        var navbarToggler = document.querySelector('.navbar-toggler');
-
-        // Loop melalui setiap elemen nav-link
-        navLinks.forEach(function (navLink) {
-            // Tambahkan event listener untuk setiap nav-link yang di-klik
-            navLink.addEventListener('click', function () {
-                // Periksa apakah navbar-toggler memiliki class "show"
-                if (navbarToggler.classList.contains('show')) {
-                    // Jika ya, tutup navbar-toggler
-                    navbarToggler.click();
-                }
+                ],
+                prevArrow: false, // Menghilangkan tombol prev
+                nextArrow: false // Menghilangkan tombol next
             });
         });
-    });
-</script>
+
+        // Script untuk menutup navbar hamburger
+
+        $(document).ready(function () {
+            // Dapatkan semua elemen dengan class "nav-link"
+            var navLinks = document.querySelectorAll('.nav-link');
+
+            // Dapatkan tombol hamburger
+            var navbarToggler = document.querySelector('.navbar-toggler');
+
+            // Loop melalui setiap elemen nav-link
+            navLinks.forEach(function (navLink) {
+                // Tambahkan event listener untuk setiap nav-link yang di-klik
+                navLink.addEventListener('click', function () {
+                    // Periksa apakah navbar-toggler memiliki class "show"
+                    if (navbarToggler.classList.contains('show')) {
+                        // Jika ya, tutup navbar-toggler
+                        navbarToggler.click();
+                    }
+                });
+            });
+        });
+
+        $(document).ready(function () {
+
+            $(".on").click(function () {
+
+                $(".box").css({
+                    "animation": "rotateon 2.5s infinite linear"
+                })
+
+                $(".on").css({
+                    "display": "none",
+                })
+
+                $(".off").css({
+                    "display": "block",
+                })
+            })
+
+            $(".off").click(function () {
+                $(".box").css({
+                    "animation": "rotateoff 0s linear",
+                })
+
+                $(".on").css({
+                    "display": "block",
+                })
+
+                $(".off").css({
+                    "display": "none",
+                })
+            })
+        })
+    </script>
 </body>
 
 </html>
