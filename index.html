@@ -56,12 +56,11 @@
             width: 800px;
             height: 400px;
             border-radius: 3%;
-            background-color: whitesmoke;
+            background-color: #DDDD;
             border: 8px solid black;
             display: flex;
             padding: 0% 2%;
             justify-content: space-between;
-            align-items: center;
         }
 
         .fan {
@@ -142,11 +141,31 @@
             display: none;
         }
 
-        .text-ac{
-            font-style: italic;
+        .text-ac {
+            width: 200px;
+
         }
 
-        .landing-page{
+        .text-ac h1 {
+            margin-top: 10%;
+            margin-bottom: 0%;
+            padding: 4%;
+            text-align: center;
+            background-color: #0E2954;
+            color: gold;
+        }
+
+        .sub-ac {
+            font-style: italic;
+            text-align: center;
+            font-size: 12px;
+            padding: 4%;
+            border: 8px solid #0E2954;
+            background-color: gold;
+            color: #0E2954;
+        }
+
+        .landing-page {
             padding: 4% 0%;
         }
 
@@ -228,23 +247,13 @@
             }
         }
 
-        #promo{
+        #promo {
             padding: 1% 0%;
             display: flex;
             justify-content: center;
             align-items: center;
         }
 
-        .tittle-promo {padding: 1% 0%;
-           color: #0E2954;
-        }
-        .tittle-promo h1{
-           text-align: center;
-        }
-        .tittle-promo p{
-            text-align: center;
-            font-weight: bold;
-        }
         .wrap-card {
             display: flex;
             flex-direction: row;
@@ -259,6 +268,14 @@
             background-color: #0E2954;
             color: white;
             padding: 4%;
+        }
+
+        .card ul {
+            list-style: decimal;
+        }
+
+        .tittle-promo {
+            text-align: center;
         }
 
         .rec {
@@ -280,18 +297,46 @@
         }
 
         .subtittle-card {
-            
             margin-bottom: 0%;
         }
 
         .ket-card {
             text-decoration: underline;
             font-weight: bold;
-            margin-bottom: 8px;
+        }
+
+        .ket-card p {
+            margin-bottom: 0%;
         }
 
         .confirm {
             background-color: #38E54D
+        }
+
+
+        .coret {
+            text-decoration: line-through;
+        }
+
+        .member {
+            margin: 5% 0%;
+            text-align: center;
+            padding: 5%;
+            background-color: #CD1818;
+        }
+
+        .member h3 {
+            color: white;
+        }
+
+        .member p {
+            color: gold;
+        }
+
+        .member a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         /* Layanan */
@@ -352,15 +397,17 @@
 
         .galeri {
             max-height: 400px;
+            max-width: 400px;
             overflow-y: auto;
             scroll-behavior: smooth;
         }
 
-        .galeri-item img {
+
+        .gambar-galeri {
+
+            margin-bottom: 10px;
             width: 400px;
             height: 400px;
-            background-color: #f1f1f1;
-            margin-bottom: 10px;
         }
 
         .slick-prev,
@@ -384,30 +431,35 @@
             right: 10px;
         }
 
-        /* Kontak */
-        #kontak {
+        #tentang-kami {}
+
+        .tittle-tentang {
             text-align: center;
-            background-color: #3a4d6e;
-            /* Sesuaikan dengan warna navbar */
-            color: #ffffff;
-            /* Warna teks putih agar terlihat kontras */
-            margin-top: 5%;
-            padding: 20px;
         }
 
-        #kontak h2,
-        #kontak h4 {
-            color: #ffffff;
-            /* Warna teks putih agar terlihat kontras */
+
+        .tittle-tentang h2 {}
+
+        .about {
+            padding: 2%;
+            background-color: #0E2954;
         }
 
-        #kontak ul {
-            list-style-type: none;
-            padding: 0;
+        .card-tentang {
+            color: white;
         }
 
-        #kontak ul li {
-            margin-bottom: 10px;
+        .image-tentang {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .image-tentang img {
+            max-width: 800px;
+            max-height: 400px;
         }
 
         @media only screen and (max-width: 1024px) {
@@ -418,7 +470,15 @@
             @media only screen and (max-width: 600px) {
                 .wrap-card {
                     flex-direction: column;
+                    display: flex;
+                    align-items: center;
                     /* Mengatur arah konten menjadi vertikal */
+                }
+
+                .gambar-galeri {
+                    object-fit: cover;
+                    width: 100%;
+                    height: 300px;
                 }
 
                 .card {
@@ -449,11 +509,19 @@
                     font-style: italic;
                     margin-bottom: 0%;
                 }
+
+                .gambar-galeri {
+                    object-fit: cover;
+                    width: 100%;
+                    height: 300px;
+                }
+
+                .image-tentang img {
+                    max-width: 400px;
+                    max-height: 400px;
+                }
             }
         }
-
-
-
     </style>
     <title>AC Service</title>
 </head>
@@ -486,14 +554,14 @@
                         <a class="nav-link" href="#galeri">Galeri</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#kontak">Kontak</a>
+                        <a class="nav-link" href="#tentang-kami">Tentang Kami</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <div class="container">
+    <div class="container ">
         <div class="landing-page">
             <div class="judul-inti">
                 <div class="tittle-main">
@@ -518,7 +586,8 @@
                     <div class="fan">
                         <div class="part">
                             <div class="box">
-                                <img src="https://cdn-icons-png.flaticon.com/512/95/95252.png" width="100%" height="100%">
+                                <img src="https://cdn-icons-png.flaticon.com/512/95/95252.png" width="100%"
+                                    height="100%">
                                 <div class="box1">
                                     <p>SWISC</p>
                                 </div>
@@ -531,7 +600,7 @@
                     </div>
                     <div class="text-ac">
                         <h1>SWISC</h1>
-                        <p>Specialist Air Conditioner</p>
+                        <p class="sub-ac">Specialist Air Conditioner</p>
                     </div>
                 </div>
             </div>
@@ -539,9 +608,11 @@
         <hr>
         <!-- Main page -->
         <div id="promo">
-            <div class="tittle-promo">
-                <h1>Promo</h1>
-                <p>- Dapatkan Harga Murah Dengan Membeli Membership! - </p>
+            <div class="wrap-promo">
+                <div class="tittle-promo">
+                    <h1>Promo</h1>
+                    <p>- Dapatkan Harga Murah Dengan Membeli Membership! - </p>
+                </div>
                 <div class="wrap-card">
                     <div class="card">
                         <div class="rec">
@@ -552,11 +623,12 @@
                         </p>
                         <p class="ket-card">*berlaku untuk member</p>
                         <ul>
-                            <li class="list-card">Pengecekan AC</li>
-                            <li class="list-card">Pembersihan AC</li>
-                            <li class="list-card">Testing</li>
+                            <li class="list-card">Pengecekan AC /Rp.15000</li>
+                            <li class="list-card">Pembersihan AC /Rp.70000</li>
+                            <li class="list-card">Testing /Rp.15000</li>
                         </ul>
-                        <p>Harga: Rp. 75.000,00</p>
+                        <p>Total Harga: Rp. <span class="coret">100.000,00</span></p>
+                        <p>Total Harga: Rp. 79.000,00</p>
                         <button class="confirm">Konfirmasi</button>
                     </div>
                     <div class="card">
@@ -564,19 +636,31 @@
                             <p>Recommended</p>
                         </div>
                         <h3 class="tittle-card">Paket Special</h3>
-                        <p class="subtittle-card">Untuk perawatan pendingin udara anda menjadi lebih baik, dan optimal!
-                        </p>
-                        <p class="ket-card">*berlaku untuk non-member</p>
+                        <div class="mid-card">
+                            <p class="subtittle-card">Untuk perawatan pendingin udara anda menjadi lebih baik, dan
+                                optimal!
+                            </p>
+                            <p class="ket-card">*berlaku untuk non-member</p>
+                        </div>
                         <ul>
                             <li class="list-card">Pengecekan AC</li>
                             <li class="list-card">Pembersihan AC</li>
                             <li class="list-card">Testing</li>
                         </ul>
-                        <p>Harga: Rp. 95.000,00</p>
+                        <p>Total Harga: Rp. <span class="coret">100.000,00</span></p>
+                        <p>Total Harga: Rp. 89.000,00</p>
                         <button class="confirm">Konfirmasi</button>
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="member">
+            <h3>Hanya dengan membayar 50 ribu rupiah saja, anda bisa bergabung menjadi member dan berlangganan dengan
+                kami selamanya!</h3>
+            <p>Tunggu apalagi? Ayo segera bergabung menjadi member kami.</p>
+            <a href="https://wa.me/6285784992784" target="_blank">
+                <img src="asset/wa.png" alt="Logo WhatsApp" width="150px">
+            </a>
         </div>
 
         <hr>
@@ -673,22 +757,20 @@
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="card-layanan">
                         <div class="card-body">
-                            <h5 class="card-title">Kemitraan</h5>
-                            <p class="card-text">Kami adalah mitra yang handal dalam menyediakan layanan AC untuk
-                                berbagai jenis pelanggan, termasuk rumah tangga, hotel, dan perkantoran. Dengan
-                                komitmen
-                                kami terhadap kepuasan pelanggan, tim teknisi berpengalaman kami siap memberikan
-                                layanan
-                                AC yang profesional dan terpercaya. Kami menyadari bahwa kebutuhan dan tuntutan
-                                pelanggan dapat bervariasi, oleh karena itu kami dapat mengakomodasi segala jenis
-                                permintaan. Kami melayani service AC di rumah tangga (Rumahan), perhotelan, sekolah,
-                                perkantoran, dan sebagainya.</p>
+                            <h5 class="card-title">Segala Permasalahan AC</h5>
+                            <p class="card-text">Kami ahli dalam menangani segala permasalahan AC dari berbagai tipe,
+                                mulai dari rumah tangga hingga komersial. Layanan kami meliputi perbaikan, instalasi,
+                                perawatan, dan diagnosis masalah seperti kebocoran refrigeran, kerusakan kompresor,
+                                masalah kelistrikan, dan permasalahan pada AC yang lainnya. Dengan pengetahuan mendalam
+                                tentang AC split, window, sentral, dan lain-lain, kami siap memberikan solusi yang
+                                efektif dan efisien. Percayakan permasalahan AC Anda kepada kami untuk layanan handal
+                                dan kepuasan pelanggan yang terjamin.</p>
                         </div>
                     </div>
                 </div>
                 <div class="contact-info text-center">
                     <p style="margin-bottom: 0%;">Hubungi kami untuk info lebih lanjut:</p>
-                    <a href="https://wa.me/085784992784" target="_blank">
+                    <a href="https://wa.me/6285784992784" target="_blank">
                         <img src="asset/wa.png" alt="Logo WhatsApp" width="150px">
                     </a>
                 </div>
@@ -703,58 +785,79 @@
             </div>
             <div class="gallery">
                 <div>
-                    <img src="asset/Graphic-Design.png" alt="Gambar 1" width="400" height="400">
+                    <img src="asset/img/col5.jpeg" alt="Gambar 1" class="gambar-galeri">
                 </div>
                 <div>
-                    <img src="asset/Graphic-Design.png" alt="Gambar 2" width="400" height="400">
+                    <img src="asset/img/card2.jpeg" alt="Gambar 1" class="gambar-galeri">
                 </div>
                 <div>
-                    <img src="asset/Graphic-Design.png" alt="Gambar 3" width="400" height="400">
+                    <img src="asset/img/teknisi1-1.jpeg" alt="Gambar 1" class="gambar-galeri">
                 </div>
                 <div>
-                    <img src="asset/Graphic-Design.png" alt="Gambar 3" width="400" height="400">
+                    <img src="asset/img/col1.jpeg" alt="Gambar 1" class="gambar-galeri">
                 </div>
                 <div>
-                    <img src="asset/Graphic-Design.png" alt="Gambar 3" width="400" height="400">
+                    <img src="asset/img/card1.jpeg" alt="Gambar 1" class="gambar-galeri">
                 </div>
                 <div>
-                    <img src="asset/Graphic-Design.png" alt="Gambar 3" width="400" height="400">
+                    <img src="asset/img/teknisi1.jpeg" alt="Gambar 1" class="gambar-galeri">
                 </div>
+                <div>
+                    <img src="asset/img/col6.jpeg" alt="Gambar 1" class="gambar-galeri">
+                </div>
+                <div>
+                    <img src="asset/img/teknisi2.jpeg" alt="Gambar 1" class="gambar-galeri">
+                </div>
+                <div>
+                    <img src="asset/img/teknisi2-1.jpeg" alt="Gambar 1" class="gambar-galeri">
+                </div>
+
+
+
                 <!-- Tambahkan gambar lainnya sesuai kebutuhan -->
             </div>
         </div>
         <hr>
     </div>
-    <!-- Menu Kontak -->
-    <div id="kontak">
-        <div class="container-fluid">
-            <h2>Kontak</h2>
-            <p>Perusahaan AC KMT adalah penyedia jasa perbaikan, pemasangan, dan perawatan AC yang berpengalaman.
-                Kami
-                menyediakan layanan berkualitas tinggi untuk pelanggan kami dalam berbagai sektor, termasuk rumah
-                tangga, hotel, dan perkantoran. Dengan tim teknisi yang terampil dan berpengalaman, kami siap
-                memberikan
-                solusi terbaik untuk kebutuhan AC Anda.</p>
 
-            <h4>Informasi Kontak</h4>
-            <p>Jika Anda memiliki pertanyaan lebih lanjut atau ingin mendapatkan informasi lebih detail tentang
-                layanan
-                kami, silakan hubungi kami melalui salah satu kontak di bawah ini:</p>
-
-            <div class="contact-info text-center">
-                <p style="margin-bottom: 0%;">Hubungi kami sekarang juga untuk Pemesanan!</p>
-                <a href="https://wa.me/085784992784" target="_blank">
-                    <img src="asset/wa.png" alt="Logo WhatsApp" width="150px">
-                </a>
-            </div>
-
-            <p>Kami siap membantu Anda dengan segala kebutuhan AC Anda. Jangan ragu untuk menghubungi kami dan kami
-                akan
-                dengan senang hati membantu.</p>
+    <section id="tentang-kami">
+        <div class="tittle-tentang">
+            <h2>Tentang Kami</h2>
         </div>
-    </div>
+        <div class="container about">
+            <div class="card-tentang">
+                <div class="image-tentang">
+                    <img src="asset/img/logo.png" alt="" srcset="">
+                </div>
+                <div class="body-tentang mt-4">
+                    <h5 class="text-tentang">SWISC - Sapra WIjaya Specialist Cooler</h5>
+                    <p class="sub-tentang">
+                        Tentang Kami:
+                        SWISC - Sapra Wijaya Specialist Cooler adalah spesialis AC yang menyediakan layanan terbaik
+                        untuk kebutuhan Anda. Dengan tim profesional yang berpengalaman, kami mampu melakukan pengecekan
+                        AC, bongkar pasang AC, pengadaan AC, pengisian refrigerant, pembersihan berkala, dan menjalin
+                        kemitraan dengan perusahaan lain. Komitmen kami adalah memberikan layanan terbaik kepada
+                        pelanggan dengan menjaga kualitas dan kepuasan. Kami mengutamakan keandalan, kecepatan, dan
+                        kepuasan pelanggan dalam setiap layanan yang kami berikan. Kepercayaan kami adalah kenyamanan
+                        pelanggan, dan kami siap memberikan solusi terbaik untuk kebutuhan pendingin udara Anda. Tim
+                        kami berdedikasi untuk memberikan layanan terbaik, efisien, dan tepat waktu demi kepuasan
+                        pelanggan.
+                    </p>
+                    <div class="contact-info text-center">
+                        <p style="margin-bottom: 2%;">Hubungi kami untuk info lebih lanjut:</p>
+                        <a href="https://wa.me/6285784992784" target="_blank">
+                            <img src="asset/wa.png" alt="Logo WhatsApp" width="150px">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
 
     <!-- Javascript -->
+
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
@@ -819,7 +922,7 @@
             $(".on").click(function () {
 
                 $(".box").css({
-                    "animation": "rotateon 2.5s infinite linear"
+                    "animation": "rotateon 0.6s infinite linear"
                 })
 
                 $(".on").css({
